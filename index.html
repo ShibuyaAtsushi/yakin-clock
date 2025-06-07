@@ -253,6 +253,16 @@
             }
         }
     </style>
+    <!-- headタグ内に追加 -->
+<link rel="manifest" href="manifest.json">
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js')
+      .then(reg => console.log('Service Worker registered', reg))
+      .catch(err => console.error('SW error', err));
+  }
+</script>
+
 </head>
 <body>
     <div class="container">
