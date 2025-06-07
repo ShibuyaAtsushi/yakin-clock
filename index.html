@@ -263,6 +263,22 @@
   }
 </script>
 
+    <!-- ボタンで通知許可を求める -->
+<button onclick="askPermission()">通知を許可する</button>
+
+<script>
+  function askPermission() {
+    Notification.requestPermission().then(permission => {
+      if (permission === 'granted') {
+        alert('通知が許可されました！');
+      } else {
+        alert('通知は許可されませんでした');
+      }
+    });
+  }
+</script>
+
+
 </head>
 <body>
     <div class="container">
